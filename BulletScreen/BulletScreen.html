@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>BulletScreen</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#screen{
+			width: 95vw;
+			height: 500px;
+			margin-top: 60px;
+			margin-left: 2.5vw;
+			box-shadow: 0 0 10px black;
+			border-radius: 5px;
+		}
+		#color-selection,#input-container{
+			display: inline-block;
+			margin-top: 50px;
+			width: 100vw;
+			text-align: center;
+			vertical-align: middle;
+		}
+		#color-selection > div{
+			display: inline-block;
+			box-shadow: border-box;
+			width: 40px;
+			height: 40px;
+			border-radius: 20px;
+			margin-left: 30px;
+			transform: 0.2s all;
+		}
+		#color-selection > div:first-child{
+			margin-left: 0;
+		}
+		#color-selection > div:hover{
+			cursor: pointer;
+			border: 1px solid rgb(228,235,241);
+			box-shadow: 0 0 10px gray;
+		}
+
+		#yellow{
+			background: yellowgreen;
+		}
+
+		#green{
+			background: lightgreen;
+		}
+
+		#red{
+			background: indianred;
+		}
+
+		#blue{
+			background: royalblue;
+		}
+
+		#orange{
+			background: orange;
+		}
+		.color-selected{
+			 border: 1px solid rgb(228,235,241);
+			 box-shadow: 0 0 10px gray;
+		}
+		#input-words{
+			width: 320px;
+			border: 1px solid #F1F1F1;
+			padding: 3px;
+			padding-left: 6px;
+			margin-bottom: 6px;
+		}
+		#input-words:focus{
+		 	border-color: white;
+			box-shadow: 0 0 5px rgb(228,235,241);
+		}
+		button{
+			border-radius: 8px;
+			width: 60px;
+			background: transparent;
+			color: royalblue;
+			border: 1px solid royalblue;
+			transition: 0.1s all;
+		}
+		button:hover{
+			cursor: pointer;
+			background: royalblue;
+			color: white;
+			outline: none;
+		}
+		button:focus{
+			outline: none;
+		}
+
+		/*弹幕文字的样式*/
+		.yellow{color: yellowgreen;}
+		.green{color: lightgreen;}
+		.red{color: indianred;}
+		.blue{color: royalblue;}
+		.orange{color: orange;}
+
+		@keyframes flow{
+			0%{
+				right: 0;
+			}
+			100%{
+				right: 97.5vw;
+			}
+		}
+
+		#screen{
+			position: relative;
+			overflow: hidden;
+		}
+		.word{
+			position: absolute;
+			right: 97.5vw;
+			white-space: nowrap;
+			animation: flow 10s forwards;
+			animation-timing-function: linear;
+		}
+	</style>
+</head>
+<body>
+	<div id="screen">
+		<span class="wordred">Genji</span>
+	</div>
+	<div id="color-selection">
+		<div id="yellow" class="color-selected"></div>
+		<div id="green"></div>
+		<div id="red"></div>
+		<div id="blue"></div>
+		<div id="orange"></div>
+	</div>
+	<div id="input-container">
+		<input type="text" name="" autofocus id="input-words" min="1" maxlength="18" placeholder="说点什么吧"><br>
+		<button id="send">发送</button>
+		<button id="send">清屏</button>
+	</div>
+</body>
+</html>
