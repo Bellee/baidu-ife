@@ -1,0 +1,224 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*导航条样式*/
+.top{
+	height: 50px;
+	padding-left: 20px;
+	background-color: #333;
+	position: relative;
+}
+
+#title{
+	color: white;
+	font-weight: bold;
+	position: absolute;
+	font-size: 20px;
+	top: 50%;
+	margin-top: -10px;
+}
+
+#navbar ul li a{
+	text-decoration: none;
+	color: white;
+}
+
+#navbar{
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	right: 20px;
+}
+
+#navbar ul li{
+	 float: left;
+     font-size: 20px;
+     margin: 0px 15px; 
+}
+
+#navbar ul li a:link{
+	text-decoration: none;
+	color: white;
+}
+
+#navbar ul li a:visited{
+	text-decoration: none;
+	color: grey;
+}
+
+#navbar ul li a:hover{
+	text-decoration: none;
+	color: grey;
+}
+
+.constainer{
+	background-color: gainsboro;
+	padding: 20px;
+}
+
+#content{
+	overflow: auto;
+	padding: 20px;
+}
+
+#content>.article>img{
+	width: 200px;
+	height: 150px;
+}
+.article{
+	font-weight: bold;
+	border-style: solid;
+	border-color: darkgray;
+	border-width: 1px 3px 3px 1px;
+	background-color: white;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.article h2{
+	line-height: 2em;
+}
+
+p.author{
+	line-height: 2em;
+	color :grey;
+}
+
+p.content{
+
+	text-indent:2em;/*缩进*/
+    line-height:2em;/*行高*/
+    letter-spacing:1px;/*字间距*/
+}
+
+.article ul {
+	list-style: none;
+	margin-left: 20px;
+}
+
+.article ul li{
+	margin: 5px 0px;
+}
+
+#pixboxs{
+    display: inline-block;
+	padding: 10px;
+}
+
+.pixbox{
+	float: left;
+	border: 1px solid grey;
+	padding: 10px;
+	margin: 10px;
+	 
+}
+
+.pixbox p{
+    text-align: center;
+}
+
+.pixbox img{
+	padding: 10px 10px 10px 10px;
+	width: 90px;
+	height: 70px;
+	text-align: center;
+}
+
+ol>li{
+	 margin: 10px 50px ;
+}
+
+table{
+	width: 99%;
+	text-align: left;
+	border-collapse: collapse;/*消除列间空白*/
+}
+
+table th{
+	background-color: black;
+	color: white;
+	padding: 5px;
+}
+
+table td{
+	background-color: white;
+	padding: 5px;
+}
+
+table td.total{
+	background-color: lightgrey;
+}
+
+.bottom{
+	padding: 20px;
+	height: 40px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+#sidebar{
+	margin: 20px 0px;
+	width: 30%;
+	font-size: 15px;
+	font-weight: bold;
+	border-width: 1px 3px 3px 2px;
+	border-style: solid;
+	background-color: white;
+	border-color: darkgray;
+	padding: 20px;
+	float: right;
+}
+
+#sidebar h2{
+	border-width: 0px 0px 0px 2px;
+	border-style: solid;
+	border-color: darkgray;
+}
+
+#sidebar form .line{
+	margin: 10px;
+}
+
+#sidebar .line .prompt{
+	display: inline-block;
+	height: 10px;
+	width: 120px;
+	text-align: right;
+}
+
+#sidebar .line .hint{
+	color: grey;
+	padding-bottom: 10px;
+	display: inline-block;
+}
+
+#sidebar select{
+	padding: 3px;
+}
+
+textarea{
+	vertical-align:top;
+}
+
+.submit-Div{
+	 text-align: center;
+}
+
+#submit-Btn{
+	width: 95%;
+	height: 40px;
+	background-color: royalblue;
+	color: white;
+	margin: 20px 0px;
+	border-radius: 10px;
+	border: 2px gray solid;
+}
+
+
+
+
+
+ 
