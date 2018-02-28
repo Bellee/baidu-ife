@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ife mission 10 </title>
+    <style>
+         .wrap{
+            width: 50%;
+            margin: 10rem auto;
+            text-align: center;
+         }
+
+         .input-name{
+            font: 400 1.2rem '微软雅黑';
+            line-height: 35px;
+         }
+
+         #inputText{
+            margin: 0 20px;
+            width: 250px;
+            line-height: 35px;
+            border-radius: 2px;
+            border: 1px #aaa solid;
+            padding-left: 10px;
+         }
+
+         .show-red{
+            border: 1px #f00 solid;
+         }
+
+         .show-green{
+            border: 1px #80d897 solid;
+         }
+
+         #checkT{
+            line-height: 35px;
+            border: none;
+            background-color: #126bc7;
+            padding: 2px 18px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 4px;
+         }
+
+         .show-notice{
+            text-align: left;
+            padding-left: 190px;
+            color: #888;
+         }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <span class="input-name">名称</span>
+        <input type="text" name="" id="inputText"/>
+        <input type="button" name="" value="验证" id="checkT">
+        <p class="show-notice" id="showNotice"> 必填，长度为4-16个字符</p>
+    </div>
+    <script type="text/javascript">
+        let inputText = document.getElementById('inputText'),
+            btn = document.getElementById('checkT'),
+            noticeText = document.getElementById('showNotice');
+
+        let GetLength = function(str){
+            return str.replace(/[\u0391-\uFFE5]/g,"aa").length;
+        }
+
+        
+
+        function init(){
+            inputText.addEventListener('mouseover', function(){
+                inputText.focus();
+                inputText.value = "";
+                inputText.style.border = "1px #aaa solid";
+                noticeText.style.color = "#888";
+                noticeText.innerHTML = "必填，长度为4-16个字符";
+            },false);
+
+            btn.addEventListener('click', function(){
+                let inputT = inputText.value.trim();
+                if(inputT == ""){
+                    noticeText.innerHTML = "姓名不能为空";
+                    noticeText.style.color = "#f00";
+                    inputText.style.border = "1px #f00 solid";
+
+                }else if(GetLength(inputT) >= 4 && GetLength(inputT) <=16){
+                    noticeText.innerHTML = "名称格式正确";
+                    noticeText.style.color = "rgb(62, 216, 102)";
+                    inputText.style.border = "1px #80d897 solid";
+                }else{
+                    noticeText.innerHTML = "长度为4-16个字符";
+                    noticeText.style.color = "#f00";
+                    inputText.style.color = "1px #f00 solid";
+                }
+            }, false);
+        }
+
+        init();
+
+        /*
+        检验字符串长度的方法包含中文时（3种）：
+        方法一：
+            var jmz = {};
+            jmz.GetLength = function(str) {
+              ///<summary>获得字符串实际长度，中文2，英文1</summary>
+              ///<param name="str">要获得长度的字符串</param>
+              var realLength = 0, len = str.length, charCode = -1;
+              for (var i = 0; i < len; i++) {
+                charCode = str.charCodeAt(i);
+                if (charCode >= 0 && charCode <= 128) 
+                   realLength += 1;
+                else
+                   realLength += 2;
+              }
+              return realLength;
+            };
+             
+            alert(jmz.GetLength('测试测试ceshiceshi));
+
+        方法二：
+            var l = str.length;
+            var blen = 0;
+            for(i=0; i<l; i++) {
+            if ((str.charCodeAt(i) & 0xff00) != 0) {
+            blen ++;
+            }
+            blen ++;
+            }
+
+        方法三：
+            var jmz = {};
+            jmz.GetLength = function(str) {
+              return str.replace(/[\u0391-\uFFE5]/g,"aa").length;  //先把中文替换成两个字节的英文，在计算长度
+            };  
+            alert(jmz.GetLength('测试测试ceshiceshi'));
+        */
+    </script>
+</body>
+
+</html>
